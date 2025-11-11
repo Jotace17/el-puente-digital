@@ -7,14 +7,17 @@ const ResourcesSection = () => {
     {
       title: "Tendencias de productos digitales en 2025",
       description: "Descubre qué formatos están generando más resultados en el mercado hispanohablante.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop",
     },
     {
       title: "Cómo iniciar sin mostrar tu cara",
       description: "Estrategias efectivas para construir presencia digital manteniendo tu privacidad.",
+      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&fit=crop",
     },
     {
       title: "IA aplicada al contenido",
       description: "Herramientas y metodologías para crear contenido de calidad con inteligencia artificial.",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop",
     },
   ];
 
@@ -32,11 +35,15 @@ const ResourcesSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {resources.map((resource, index) => (
-            <Card key={index} className="hover:shadow-xl transition-shadow group">
+            <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow group border-0 shadow-md">
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src={resource.image}
+                  alt={resource.title}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
               <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <FileText className="h-6 w-6 text-primary" />
-                </div>
                 <CardTitle className="text-xl">{resource.title}</CardTitle>
                 <CardDescription className="text-base mt-2">
                   {resource.description}

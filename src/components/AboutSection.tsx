@@ -37,23 +37,44 @@ const AboutSection = () => {
             </div>
           </div>
 
-          {/* Right Column */}
-          <Card className="p-8 shadow-lg">
-            <div className="flex flex-col items-center text-center">
-              <img
-                src={founderPhoto}
-                alt="Fundadora de El Digital Bridge"
-                className="w-32 h-32 rounded-full object-cover mb-4"
-              />
-              <h3 className="text-xl font-bold mb-2">María González</h3>
-              <p className="text-sm text-muted-foreground mb-4">Fundadora y Directora</p>
-              <p className="text-sm text-muted-foreground">
-                Especialista en marketing digital con más de 8 años de experiencia
-                ayudando a emprendedores y creadores a construir negocios digitales
-                sostenibles.
-              </p>
-            </div>
-          </Card>
+          {/* Right Column - Co-founders */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <Card className="p-6 shadow-lg hover:shadow-xl transition-all duration-300 group">
+              <div className="flex flex-col items-center text-center">
+                <div className="relative mb-4 overflow-hidden rounded-full">
+                  <img
+                    src={founderPhoto}
+                    alt="Co-fundadora de El Digital Bridge"
+                    className="w-28 h-28 rounded-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                </div>
+                <h3 className="text-lg font-bold mb-1">María González</h3>
+                <p className="text-sm text-primary font-medium mb-3">Fundadora y Directora</p>
+                <p className="text-xs text-muted-foreground">
+                  Especialista en marketing digital con más de 8 años de experiencia
+                  ayudando a emprendedores a construir negocios digitales sostenibles.
+                </p>
+              </div>
+            </Card>
+
+            <Card className="p-6 shadow-lg hover:shadow-xl transition-all duration-300 group">
+              <div className="flex flex-col items-center text-center">
+                <div className="relative mb-4 overflow-hidden rounded-full">
+                  <img
+                    src={founderPhoto}
+                    alt="Co-fundador de El Digital Bridge"
+                    className="w-28 h-28 rounded-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                </div>
+                <h3 className="text-lg font-bold mb-1">Carlos Rodríguez</h3>
+                <p className="text-sm text-primary font-medium mb-3">Co-fundador y Estratega</p>
+                <p className="text-xs text-muted-foreground">
+                  Experto en transformación digital y liderazgo con 10 años formando
+                  profesionales en estrategia de contenido y monetización ética.
+                </p>
+              </div>
+            </Card>
+          </div>
         </div>
       </div>
     </section>
