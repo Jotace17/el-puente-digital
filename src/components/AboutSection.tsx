@@ -40,28 +40,9 @@ const AboutSection = () => {
           {/* Right Column - Co-founders */}
           <div className="relative h-[420px] flex items-center justify-center">
             {/* Container for overlapping cards */}
-            <div className="relative w-full max-w-md group/cards">
-              {/* Card B - Back card (will come forward on hover) */}
-              <Card className="absolute top-0 left-0 w-full p-6 shadow-lg transition-all duration-500 ease-out group-hover/cards:translate-x-8 group-hover/cards:translate-y-8 group-hover/cards:z-10 z-0">
-                <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-4 overflow-hidden rounded-full">
-                    <img
-                      src={founderPhoto}
-                      alt="Co-fundador de El Digital Bridge"
-                      className="w-28 h-28 rounded-full object-cover"
-                    />
-                  </div>
-                  <h3 className="text-lg font-bold mb-1">Carlos Rodríguez</h3>
-                  <p className="text-sm text-primary font-medium mb-3">Co-fundador y Estratega</p>
-                  <p className="text-xs text-muted-foreground">
-                    Experto en transformación digital y liderazgo con 10 años formando
-                    profesionales en estrategia de contenido y monetización ética.
-                  </p>
-                </div>
-              </Card>
-
-              {/* Card A - Front card (will slide on hover) */}
-              <Card className="relative w-full p-6 shadow-xl transition-all duration-500 ease-out group-hover/cards:-translate-x-8 group-hover/cards:-translate-y-8 z-20">
+            <div className="relative w-full max-w-md h-full group/cards">
+              {/* Card A - Front card initially (will slide back on hover) */}
+              <Card className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full p-6 shadow-xl transition-all duration-500 ease-out z-20 group-hover/cards:translate-x-[-calc(50%-16px)] group-hover/cards:translate-y-[-calc(50%-16px)] group-hover/cards:z-10 group-hover/cards:shadow-lg">
                 <div className="flex flex-col items-center text-center">
                   <div className="relative mb-4 overflow-hidden rounded-full">
                     <img
@@ -75,6 +56,25 @@ const AboutSection = () => {
                   <p className="text-xs text-muted-foreground">
                     Especialista en marketing digital con más de 8 años de experiencia
                     ayudando a emprendedores a construir negocios digitales sostenibles.
+                  </p>
+                </div>
+              </Card>
+
+              {/* Card B - Back card initially (will come to front on hover) */}
+              <Card className="absolute top-1/2 left-1/2 translate-x-[-calc(50%-12px)] translate-y-[-calc(50%-12px)] w-full p-6 shadow-lg transition-all duration-500 ease-out z-10 group-hover/cards:-translate-x-1/2 group-hover/cards:-translate-y-1/2 group-hover/cards:z-30 group-hover/cards:shadow-2xl group-hover/cards:scale-105">
+                <div className="flex flex-col items-center text-center">
+                  <div className="relative mb-4 overflow-hidden rounded-full">
+                    <img
+                      src={founderPhoto}
+                      alt="Co-fundador de El Digital Bridge"
+                      className="w-28 h-28 rounded-full object-cover"
+                    />
+                  </div>
+                  <h3 className="text-lg font-bold mb-1">Carlos Rodríguez</h3>
+                  <p className="text-sm text-primary font-medium mb-3">Co-fundador y Estratega</p>
+                  <p className="text-xs text-muted-foreground">
+                    Experto en transformación digital y liderazgo con 10 años formando
+                    profesionales en estrategia de contenido y monetización ética.
                   </p>
                 </div>
               </Card>
