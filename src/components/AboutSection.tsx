@@ -1,6 +1,68 @@
 import { Card } from "@/components/ui/card";
 import { CheckCircle2 } from "lucide-react";
 import founderPhoto from "@/assets/founder-photo.jpg";
+import { motion } from "framer-motion";
+import { useState } from "react";
+
+interface CoFounderCardProps {
+  name: string;
+  role: string;
+  photo: string;
+  bio: string;
+}
+
+const CoFounderCard = ({ name, role, photo, bio }: CoFounderCardProps) => {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  return (
+    <div 
+      className="flex-1 perspective-1000 cursor-pointer"
+      onClick={() => setIsFlipped(!isFlipped)}
+    >
+      <motion.div
+        className="relative w-full h-[380px]"
+        initial={false}
+        animate={{ rotateY: isFlipped ? 180 : 0 }}
+        transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
+        style={{ transformStyle: "preserve-3d" }}
+      >
+        {/* Front Side */}
+        <Card className="absolute inset-0 backface-hidden border-2 border-border bg-card overflow-hidden hover:shadow-xl hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 hover:border-primary/20">
+          <div className="h-full flex flex-col">
+            <div className="h-48 overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200">
+              <img
+                src={photo}
+                alt={name}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="flex-1 p-6 flex flex-col justify-center text-center">
+              <h3 className="text-2xl font-bold mb-2">{name}</h3>
+              <p className="text-primary font-semibold mb-4">{role}</p>
+              <p className="text-sm text-muted-foreground">
+                Haz clic para ver más
+              </p>
+            </div>
+          </div>
+        </Card>
+
+        {/* Back Side */}
+        <Card className="absolute inset-0 backface-hidden border-2 border-primary/30 bg-gradient-to-br from-slate-50 to-slate-100 p-6 flex flex-col justify-center" style={{ transform: "rotateY(180deg)" }}>
+          <div className="text-center space-y-4">
+            <h3 className="text-xl font-bold">{name}</h3>
+            <p className="text-primary font-semibold text-sm">{role}</p>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              {bio}
+            </p>
+            <p className="text-xs text-muted-foreground/60 mt-6">
+              Haz clic para volver
+            </p>
+          </div>
+        </Card>
+      </motion.div>
+    </div>
+  );
+};
 
 const AboutSection = () => {
   const highlights = [
@@ -38,47 +100,22 @@ const AboutSection = () => {
           </div>
 
           {/* Right Column - Co-founders */}
-          <div className="relative h-[420px] flex items-center justify-center">
-            {/* Container for overlapping cards */}
-            <div className="relative w-full max-w-md h-full group/cards">
-              {/* Card A - Front card initially (will slide back on hover) */}
-              <Card className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full p-6 shadow-xl transition-all duration-500 ease-out z-20 group-hover/cards:translate-x-[-calc(50%-16px)] group-hover/cards:translate-y-[-calc(50%-16px)] group-hover/cards:z-10 group-hover/cards:shadow-lg">
-                <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-4 overflow-hidden rounded-full">
-                    <img
-                      src={founderPhoto}
-                      alt="Co-fundadora de El Digital Bridge"
-                      className="w-28 h-28 rounded-full object-cover"
-                    />
-                  </div>
-                  <h3 className="text-lg font-bold mb-1">María González</h3>
-                  <p className="text-sm text-primary font-medium mb-3">Fundadora y Directora</p>
-                  <p className="text-xs text-muted-foreground">
-                    Especialista en marketing digital con más de 8 años de experiencia
-                    ayudando a emprendedores a construir negocios digitales sostenibles.
-                  </p>
-                </div>
-              </Card>
-
-              {/* Card B - Back card initially (will come to front on hover) */}
-              <Card className="absolute top-1/2 left-1/2 translate-x-[-calc(50%-12px)] translate-y-[-calc(50%-12px)] w-full p-6 shadow-lg transition-all duration-500 ease-out z-10 group-hover/cards:-translate-x-1/2 group-hover/cards:-translate-y-1/2 group-hover/cards:z-30 group-hover/cards:shadow-2xl group-hover/cards:scale-105">
-                <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-4 overflow-hidden rounded-full">
-                    <img
-                      src={founderPhoto}
-                      alt="Co-fundador de El Digital Bridge"
-                      className="w-28 h-28 rounded-full object-cover"
-                    />
-                  </div>
-                  <h3 className="text-lg font-bold mb-1">Carlos Rodríguez</h3>
-                  <p className="text-sm text-primary font-medium mb-3">Co-fundador y Estratega</p>
-                  <p className="text-xs text-muted-foreground">
-                    Experto en transformación digital y liderazgo con 10 años formando
-                    profesionales en estrategia de contenido y monetización ética.
-                  </p>
-                </div>
-              </Card>
-            </div>
+          <div className="flex flex-col md:flex-row gap-8 items-stretch">
+            {/* Co-founder Card 1 */}
+            <CoFounderCard
+              name="María González"
+              role="Fundadora y Directora"
+              photo={founderPhoto}
+              bio="Apasionada por el marketing digital, la estrategia de contenido y el desarrollo de negocios digitales. Enfocada en construir procesos claros y sostenibles para creadores y emprendedores."
+            />
+            
+            {/* Co-founder Card 2 */}
+            <CoFounderCard
+              name="Carlos Rodríguez"
+              role="Co-fundador y Estratega"
+              photo={founderPhoto}
+              bio="Experto en transformación digital y liderazgo. Más de 10 años formando profesionales en estrategia de contenido y monetización ética con enfoque en resultados medibles."
+            />
           </div>
         </div>
       </div>
