@@ -108,7 +108,7 @@ const AboutSection = () => {
               name="María González"
               role="Fundadora y Directora"
               photo={founderPhoto}
-              bio="Apasionada por el marketing digital, la estrategia de contenido y el desarrollo de negocios digitales. Enfocada en construir procesos claros y sostenibles para creadores y emprendedores."
+              bio="Experta en marketing digital y estrategia de contenido."
             />
             
             {/* Co-founder Card 2 */}
@@ -116,7 +116,7 @@ const AboutSection = () => {
               name="Carlos Rodríguez"
               role="Co-fundador y Estratega"
               photo={maleFounderPhoto}
-              bio="Experto en transformación digital y liderazgo. Más de 10 años formando profesionales en estrategia de contenido y monetización ética con enfoque en resultados medibles."
+              bio="Especialista en transformación digital y liderazgo estratégico."
             />
           </div>
         </div>
