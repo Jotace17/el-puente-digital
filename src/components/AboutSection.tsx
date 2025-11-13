@@ -27,29 +27,30 @@ const CoFounderCard = ({ name, role, photo, bio }: CoFounderCardProps) => {
         style={{ transformStyle: "preserve-3d" }}
       >
         {/* Front Side */}
-        <Card className="absolute inset-0 backface-hidden border-2 border-border bg-card overflow-hidden hover:shadow-xl hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 hover:border-primary/20">
-          <div className="h-full flex flex-col">
-            <div className="h-48 overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200">
-              <img
-                src={photo}
-                alt={name}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="flex-1 p-6 flex flex-col justify-center text-center">
-              <h3 className="text-2xl font-bold mb-2">{name}</h3>
-              <p className="text-primary font-semibold mb-4">{role}</p>
-              <p className="text-sm text-muted-foreground">
-                Haz clic para ver más
-              </p>
-            </div>
+        <Card className="absolute inset-0 backface-hidden border border-slate-200 bg-white rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 ease-out overflow-hidden">
+          <div className="h-full flex flex-col items-center justify-center p-8 text-center space-y-3">
+            <img
+              src={photo}
+              alt={name}
+              className="w-[120px] h-[120px] rounded-full object-cover shadow-md mx-auto"
+            />
+            <h3 className="text-xl font-semibold mt-4">{name}</h3>
+            <p className="text-sm text-slate-500 font-medium">{role}</p>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              {bio}
+            </p>
           </div>
         </Card>
 
         {/* Back Side */}
-        <Card className="absolute inset-0 backface-hidden border-2 border-primary/30 bg-gradient-to-br from-slate-50 to-slate-100 p-6 flex flex-col justify-center" style={{ transform: "rotateY(180deg)" }}>
+        <Card className="absolute inset-0 backface-hidden border border-primary/30 bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl p-8 flex flex-col justify-center" style={{ transform: "rotateY(180deg)" }}>
           <div className="text-center space-y-4">
-            <h3 className="text-xl font-bold">{name}</h3>
+            <img
+              src={photo}
+              alt={name}
+              className="w-[100px] h-[100px] rounded-full object-cover shadow-md mx-auto"
+            />
+            <h3 className="text-xl font-bold mt-4">{name}</h3>
             <p className="text-primary font-semibold text-sm">{role}</p>
             <p className="text-sm text-muted-foreground leading-relaxed">
               {bio}
