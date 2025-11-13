@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { CheckCircle2 } from "lucide-react";
 import founderPhoto from "@/assets/founder-photo.jpg";
+import maleFounderPhoto from "@/assets/male-founder-photo.jpg";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -114,7 +115,7 @@ const AboutSection = () => {
             <CoFounderCard
               name="Carlos Rodríguez"
               role="Co-fundador y Estratega"
-              photo={founderPhoto}
+              photo={maleFounderPhoto}
               bio="Experto en transformación digital y liderazgo. Más de 10 años formando profesionales en estrategia de contenido y monetización ética con enfoque en resultados medibles."
             />
           </div>
