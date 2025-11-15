@@ -1,5 +1,4 @@
 import { Card } from "@/components/ui/card";
-import { Play } from "lucide-react";
 
 const WelcomeSection = () => {
   return (
@@ -11,20 +10,31 @@ const WelcomeSection = () => {
           </h2>
         </div>
 
-        {/* Video Container */}
+        {/* Vimeo Visualizer Video */}
+        <Card className="overflow-hidden shadow-xl rounded-2xl mb-8">
+          <div className="relative aspect-video">
+            <iframe
+              src="https://player.vimeo.com/video/YOUR_VIMEO_VIDEO_ID?title=0&byline=0&portrait=0"
+              className="absolute inset-0 w-full h-full"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              title="Visualizer Form"
+            />
+          </div>
+        </Card>
+
+        {/* YouTube Introduction Video */}
         <Card className="overflow-hidden shadow-xl rounded-2xl">
-          <div className="relative aspect-video bg-slate-200 flex items-center justify-center group cursor-pointer hover:bg-slate-300 transition-colors">
-            {/* Video Placeholder - Replace with actual video embed */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                <Play className="h-10 w-10 text-white fill-white ml-1" />
-              </div>
-            </div>
-            
-            {/* Placeholder text - remove when video is added */}
-            <p className="absolute bottom-4 text-sm text-slate-600">
-              Video de introducción
-            </p>
+          <div className="relative aspect-video">
+            <iframe
+              src="https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID"
+              className="absolute inset-0 w-full h-full"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              title="Video de Introducción"
+            />
           </div>
         </Card>
 
