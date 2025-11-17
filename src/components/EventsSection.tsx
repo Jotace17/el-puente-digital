@@ -24,13 +24,6 @@ const EventsSection = () => {
       modality: "Online",
       description: "Sesión práctica para crear un calendario de contenido que convierta.",
     },
-    {
-      title: "Sesión de comunidad: Casos de éxito",
-      date: "29 de Marzo, 2025",
-      time: "19:00 - 20:00 GMT-5",
-      modality: "Online",
-      description: "Conoce historias reales de alumnos que han logrado sus objetivos.",
-    },
   ];
 
   const handleSubscribe = (e: React.FormEvent) => {

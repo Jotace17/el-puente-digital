@@ -29,10 +29,6 @@ const KeyAreasSection = () => {
           <p className="text-lg text-muted-foreground mb-4 max-w-2xl mx-auto">
             Domina las competencias que te abrirán camino en el entorno digital.
           </p>
-          <p className="text-base text-muted-foreground max-w-3xl mx-auto">
-            Nuestro enfoque combina estrategia, creatividad y tecnología para
-            construir marcas auténticas y sostenibles.
-          </p>
         </div>
 
         <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -53,8 +49,24 @@ const KeyAreasSection = () => {
         </div>
 
         <div className="text-center">
-          <Button size="lg" className="text-base px-8">
-            Explorar los programas completos
+          <a
+            href="https://d1yei2z3i6k35z.cloudfront.net/7703561/688d17a99550e_EL_Digital_Bridge_MRR_Acuerdo_ES.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-lg text-muted-foreground mb-4 max-w-2xl mx-auto block hover:underline"
+          >
+            Con derechos de reventa del 100%
+          </a>
+
+          <Button 
+            size="lg" 
+            className="text-base px-8"
+            onClick={() =>
+              (window.location.href =
+                "https://shop.beacons.ai/katherinee_ugc/8b96a046-edae-4c3d-a36e-db66d661570e")
+              }
+          >
+            ¡Quiero iniciar!
           </Button>
         </div>
       </div>

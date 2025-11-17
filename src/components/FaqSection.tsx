@@ -8,34 +8,34 @@ import {
 const FaqSection = () => {
   const faqs = [
     {
-      question: "¿Necesito experiencia previa?",
+      question: "¿Qué ganas si das el 100% de la venta?",
       answer:
-        "No necesitas experiencia técnica previa. Nuestros programas están diseñados para comenzar desde cero, con explicaciones claras y paso a paso.",
+        "Una marca personal más sólida e impartir mis estrategias al mundo entero!",
     },
     {
-      question: "¿Puedo hacerlo si no soy técnica?",
+      question: "¿Puedo hacerlo sin papeles?",
       answer:
-        "Absolutamente. Enfocamos la enseñanza en estrategia y aplicación práctica, no en complejidad técnica. Las herramientas que usamos son intuitivas y bien explicadas.",
+        "Los productos digitales se venden en casi todos los países del mundo sin importar su documentación, tu puedes hacerlo con los documentos de tu país de origen y en su defecto generar un Itin (documento para pagar taxes en USA).",
     },
     {
-      question: "¿Hay acompañamiento?",
+      question: "¿Puedo hacerlo si no se de tecnología?",
       answer:
-        "Sí. Cada programa incluye sesiones de mentoría, acceso a comunidad privada y soporte por email para resolver dudas específicas de tu caso.",
+        "Les confieso que yo soy una persona poco tecnológica y aun así generé 300mil dolares en un año, las técnicas y la explicacion que damos en esta academia no requieren de profesionalismo!",
     },
     {
-      question: "¿Recibo material descargable?",
+      question: "¿Tendré acompañamiento?",
       answer:
-        "Sí. Todos los programas incluyen plantillas, guías descargables, checklists y recursos complementarios que puedes usar incluso después de finalizar.",
+        "La academia tendrá clases en vivo esporádicas en inglés y español, si quieres acompañamiento más personalizado podrás adquirir tu membresía de clases con Katherine semanales!",
     },
     {
-      question: "¿Cuánto tiempo necesito dedicarle?",
+      question: "¿Funciona aunque lo esté haciendo todo el mundo?",
       answer:
-        "Recomendamos entre 3-5 horas semanales. El contenido es flexible y puedes avanzar a tu ritmo, adaptándolo a tu disponibilidad.",
+        "El 97% de usuarios en redes sociales NO generan dinero con las redes ¿crees que el 3% es mucha gente? \n No todo el mundo lo está haciendo, estamos en el inicio de esta era digital y si lo dejas pasar te vas a arrepentir de no haber iniciado antes!",
     },
     {
-      question: "¿Ofrecen certificados?",
+      question: "¿Puedo hacerlo sin mostrar la cara?",
       answer:
-        "Sí. Al completar un programa recibes un certificado de finalización que puedes compartir en tu perfil profesional.",
+        "Sí, con inteligencia artificial y contenido educativo, puedes atraer a tu cliente ideal sin mostrar tu rostro en redes sociales.",
     },
   ];
 

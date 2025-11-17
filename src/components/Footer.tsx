@@ -14,10 +14,8 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Youtube, href: "#", label: "YouTube" },
+    { icon: Instagram, href: "https://www.instagram.com/eldigitalbridge?igsh=eXI4MGF6ZmNrZGd2", label: "Instagram" },
+    { icon: Youtube, href: "https://www.youtube.com/@katherineugc31", label: "YouTube" },
   ];
 
   return (

@@ -52,8 +52,12 @@ const EnrollmentSection = () => {
               <Button
                 className="w-full bg-primary hover:bg-primary/90"
                 size="lg"
+                onClick={() =>
+                (window.location.href =
+                  "https://shop.beacons.ai/katherinee_ugc/8b96a046-edae-4c3d-a36e-db66d661570e")
+                }
               >
-                Unirme por 499 USD
+                Unirme
               </Button>
             </CardContent>
           </Card>

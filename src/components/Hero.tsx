@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
+import { Card } from "@/components/ui/card";
 import heroImage from "@/assets/hero-image.jpg";
 
 const Hero = () => {
@@ -10,20 +11,31 @@ const Hero = () => {
           {/* Left Column */}
           <div className="text-navy-foreground">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Tu puente hacia el crecimiento digital
+              Tu puente hacia el éxito digital
             </h1>
             <p className="text-lg md:text-xl mb-8 text-navy-foreground/90">
               Formamos creadores, consultores y emprendedores digitales que desean
               monetizar de forma ética, sostenible y con acompañamiento.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="text-base">
+              <Button 
+                size="lg" 
+                className="text-base"
+                onClick={() =>
+                (window.location.href =
+                "#programas")
+                }
+              >
                 Explorar programas
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="text-base border-navy-foreground text-navy-foreground hover:bg-navy-foreground/10"
+                className="text-base bg-navy-foreground/10 text-navy-foreground hover:border-navy-foreground/10"
+                onClick={() =>
+                (window.location.href =
+                "#eventos")
+                }
               >
                 Ver próximos eventos
               </Button>
@@ -32,21 +44,20 @@ const Hero = () => {
 
           {/* Right Column */}
           <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src={heroImage}
-                alt="Plataforma de educación digital"
-                className="w-full h-auto"
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-navy/20 hover:bg-navy/10 transition-colors cursor-pointer group">
-                <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                  <Play className="h-8 w-8 text-primary-foreground ml-1" fill="currentColor" />
-                </div>
+           
+          {/* Vimeo Visualizer Video */}
+            <Card className="overflow-hidden shadow-xl rounded-2xl mb-8">
+              <div className="relative aspect-video">
+                <iframe
+                  src="https://player.vimeo.com/video/1115884764?h=b223b1bd7c&title=0&byline=0&portrait=0&badge=0"
+                  className="absolute inset-0 w-full h-full"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  title="Visualizer Form"
+                />
               </div>
-            </div>
-            <p className="text-center mt-6 text-navy-foreground/80 text-sm">
-              Más de 1.000 alumnos en 10 países
-            </p>
+            </Card>
           </div>
         </div>
       </div>

@@ -1,22 +1,25 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, FileText } from "lucide-react";
+import personalbranding from "@/assets/personal-branding.jpg";
+import ventasdigitales from "@/assets/ventas-digitales.jpg";
+
 
 const ResourcesSection = () => {
   const resources = [
     {
-      title: "Tendencias de productos digitales en 2025",
-      description: "Descubre qué formatos están generando más resultados en el mercado hispanohablante.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop",
+      title: "Marca personal",
+      description: "Construye tu identidad, tono y estilo para que tu audiencia te reconozca y confíe!",
+      image: personalbranding,
     },
     {
-      title: "Cómo iniciar sin mostrar tu cara",
-      description: "Estrategias efectivas para construir presencia digital manteniendo tu privacidad.",
-      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&fit=crop",
+      title: "Ventas digitales",
+      description: "Convierte seguidores en clientes con embudos, ofertas irresistibles y marca.",
+      image: ventasdigitales,
     },
     {
       title: "IA aplicada al contenido",
-      description: "Herramientas y metodologías para crear contenido de calidad con inteligencia artificial.",
+      description: "Acelera ideas, contenidos y atención usando las herramientas de IA más actuales.",
       image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop",
     },
   ];
@@ -26,14 +29,14 @@ const ResourcesSection = () => {
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Recursos y contenidos
+            Conoce nuestros 3 pilares
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Aprende con artículos y guías prácticas de nuestro equipo
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 flex justify-center">
           {resources.map((resource, index) => (
             <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow group border-0 shadow-md">
               <div className="aspect-video overflow-hidden">
@@ -49,14 +52,27 @@ const ResourcesSection = () => {
                   {resource.description}
                 </CardDescription>
               </CardHeader>
+              {/*
               <CardContent>
                 <Button variant="ghost" className="group-hover:gap-3 transition-all p-0">
                   Leer más
                   <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </CardContent>
+              */}
             </Card>
           ))}
+
+          <Button 
+            size="lg" 
+            className="text-base px-8"
+            onClick={() =>
+              (window.location.href =
+                "https://shop.beacons.ai/katherinee_ugc/8b96a046-edae-4c3d-a36e-db66d661570e")
+              }
+          >
+            ¡Necesito cruzar el puente!
+          </Button>
         </div>
       </div>
     </section>

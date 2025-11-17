@@ -79,7 +79,7 @@ const AboutSection = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Column */}
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Quiénes somos</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">¿Quiénes somos?</h2>
             <p className="text-lg text-muted-foreground mb-6">
               El Digital Bridge nace de la necesidad de ofrecer formación práctica,
               ética y actualizada para profesionales que quieren monetizar su
