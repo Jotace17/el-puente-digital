@@ -1,31 +1,34 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Star } from "lucide-react";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { useState } from "react";
 
 const TestimonialsSection = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   const testimonials = [
     {
       name: "Laura Martínez",
       role: "Consultora de Marca Personal",
-      content: "El programa me ayudó a estructurar mi negocio desde cero. En 3 meses ya tenía mi primer cliente recurrente.",
-      rating: 5,
+      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&auto=format&fit=crop",
+      alt: "Testimonio de Laura Martínez sobre el programa",
     },
     {
       name: "Carlos Ramírez",
       role: "Creador de Contenido",
-      content: "Las estrategias son claras y aplicables. No prometen milagros, pero sí resultados si haces el trabajo.",
-      rating: 5,
+      image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&auto=format&fit=crop",
+      alt: "Testimonio de Carlos Ramírez sobre estrategias efectivas",
     },
     {
       name: "Ana Fernández",
       role: "Coach Digital",
-      content: "Lo que más valoro es el acompañamiento. No te dejan solo con el contenido, siempre hay alguien para resolver dudas.",
-      rating: 5,
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&auto=format&fit=crop",
+      alt: "Testimonio de Ana Fernández sobre acompañamiento",
     },
     {
       name: "Diego Torres",
       role: "Emprendedor Digital",
-      content: "Contenido actualizado y sin relleno. Cada módulo te acerca más a tu objetivo de monetización.",
-      rating: 5,
+      image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=800&auto=format&fit=crop",
+      alt: "Testimonio de Diego Torres sobre contenido actualizado",
     },
   ];
 
@@ -40,22 +43,33 @@ const TestimonialsSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow">
-              <CardContent className="pt-6">
-                <div className="flex gap-1 mb-4">
-                  {Array.from({ length: testimonial.rating }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-primary text-primary" />
-                  ))}
+            <Dialog key={index}>
+              <DialogTrigger asChild>
+                <Card 
+                  className="overflow-hidden cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:shadow-xl shadow-md"
+                  onClick={() => setSelectedImage(testimonial.image)}
+                >
+                  <CardContent className="p-0">
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.alt}
+                      className="w-full h-full object-cover rounded-xl"
+                    />
+                  </CardContent>
+                </Card>
+              </DialogTrigger>
+              <DialogContent className="max-w-4xl">
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.alt}
+                  className="w-full h-auto rounded-xl"
+                />
+                <div className="mt-4 text-center">
+                  <p className="font-semibold text-lg">{testimonial.name}</p>
+                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                 </div>
-                <p className="text-sm mb-4 text-muted-foreground italic">
-                  "{testimonial.content}"
-                </p>
-                <div>
-                  <p className="font-semibold text-sm">{testimonial.name}</p>
-                  <p className="text-xs text-muted-foreground">{testimonial.role}</p>
-                </div>
-              </CardContent>
-            </Card>
+              </DialogContent>
+            </Dialog>
           ))}
         </div>
       </div>

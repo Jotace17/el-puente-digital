@@ -36,7 +36,7 @@ const ResourcesSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 flex justify-center">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {resources.map((resource, index) => (
             <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow group border-0 shadow-md">
               <div className="aspect-video overflow-hidden">
@@ -52,17 +52,11 @@ const ResourcesSection = () => {
                   {resource.description}
                 </CardDescription>
               </CardHeader>
-              {/*
-              <CardContent>
-                <Button variant="ghost" className="group-hover:gap-3 transition-all p-0">
-                  Leer más
-                  <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </CardContent>
-              */}
             </Card>
           ))}
+        </div>
 
+        <div className="flex justify-center mt-12">
           <Button 
             size="lg" 
             className="text-base px-8"
