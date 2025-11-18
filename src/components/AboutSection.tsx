@@ -2,69 +2,35 @@ import { Card } from "@/components/ui/card";
 import { CheckCircle2 } from "lucide-react";
 import foto_katherine from "@/assets/foto-katy.jpg";
 import foto_troy from "@/assets/foto-troy.jpg";
-import { motion } from "framer-motion";
-import { useState } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
-interface CoFounderCardProps {
+interface CoFounder {
   name: string;
   role: string;
   photo: string;
   bio: string;
 }
 
-const CoFounderCard = ({ name, role, photo, bio }: CoFounderCardProps) => {
-  const [isFlipped, setIsFlipped] = useState(false);
-
-  return (
-    <div 
-      className="flex-1 perspective-1000 cursor-pointer"
-      onClick={() => setIsFlipped(!isFlipped)}
-    >
-      <motion.div
-        className="relative w-full h-[380px]"
-        initial={false}
-        animate={{ rotateY: isFlipped ? 180 : 0 }}
-        transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
-        style={{ transformStyle: "preserve-3d" }}
-      >
-        {/* Front Side */}
-        <Card className="absolute inset-0 backface-hidden border border-slate-200 bg-white rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 ease-out overflow-hidden">
-          <div className="h-full flex flex-col items-center justify-center p-8 text-center space-y-3">
-            <img
-              src={photo}
-              alt={name}
-              className="w-[120px] h-[120px] rounded-full object-cover shadow-md mx-auto"
-            />
-            <h3 className="text-xl font-semibold mt-4">{name}</h3>
-            <p className="text-sm text-slate-500 font-medium">{role}</p>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              {bio}
-            </p>
-          </div>
-        </Card>
-
-        {/* Back Side */}
-        <Card className="absolute inset-0 backface-hidden border border-primary/30 bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl p-8 flex flex-col justify-center" style={{ transform: "rotateY(180deg)" }}>
-          <div className="text-center space-y-4">
-            <img
-              src={photo}
-              alt={name}
-              className="w-[100px] h-[100px] rounded-full object-cover shadow-md mx-auto"
-            />
-            <h3 className="text-xl font-bold mt-4">{name}</h3>
-            <p className="text-primary font-semibold text-sm">{role}</p>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              {bio}
-            </p>
-            <p className="text-xs text-muted-foreground/60 mt-6">
-              Haz clic para volver
-            </p>
-          </div>
-        </Card>
-      </motion.div>
-    </div>
-  );
-};
+const coFounders: CoFounder[] = [
+  {
+    name: "Katherine",
+    role: "Fundadora y Directora",
+    photo: foto_katherine,
+    bio: "Experta en marketing digital y estrategia de contenido.",
+  },
+  {
+    name: "Troy",
+    role: "Co-fundador y Estratega",
+    photo: foto_troy,
+    bio: "Especialista en transformación digital e IA.",
+  },
+];
 
 const AboutSection = () => {
   const highlights = [
@@ -101,23 +67,32 @@ const AboutSection = () => {
             </div>
           </div>
 
-          {/* Right Column - Co-founders */}
-          <div className="flex flex-col md:flex-row gap-8 items-stretch">
-            {/* Co-founder Card 1 */}
-            <CoFounderCard
-              name="Katherine"
-              role="Fundadora y Directora"
-              photo={foto_katherine}
-              bio="Experta en marketing digital y estrategia de contenido."
-            />
-            
-            {/* Co-founder Card 2 */}
-            <CoFounderCard
-              name="Troy"
-              role="Co-fundador y Estratega"
-              photo={foto_troy}
-              bio="Especialista en transformación digital e IA."
-            />
+          {/* Right Column - Co-founders Carousel */}
+          <div className="relative">
+            <Carousel className="w-full max-w-md mx-auto">
+              <CarouselContent>
+                {coFounders.map((founder, index) => (
+                  <CarouselItem key={index}>
+                    <Card className="border border-border bg-card rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl">
+                      <div className="h-[400px] flex flex-col items-center justify-center p-8 text-center space-y-4">
+                        <img
+                          src={founder.photo}
+                          alt={founder.name}
+                          className="w-[140px] h-[140px] rounded-full object-cover shadow-md"
+                        />
+                        <h3 className="text-2xl font-semibold">{founder.name}</h3>
+                        <p className="text-sm text-primary font-medium">{founder.role}</p>
+                        <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
+                          {founder.bio}
+                        </p>
+                      </div>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-0" />
+              <CarouselNext className="right-0" />
+            </Carousel>
           </div>
         </div>
       </div>
