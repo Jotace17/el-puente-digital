@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@/components/ui/card";
+
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Star } from "lucide-react";
 
@@ -42,38 +42,36 @@ const TestimonialsSection = () => {
         </div>
 
         <div className="flex justify-center">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="overflow-hidden shadow-md">
-                <CardContent className="p-6">
-                  <div className="flex gap-1 mb-3">
-                    {Array.from({ length: testimonial.rating }).map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <p className="font-semibold text-lg mb-1">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground mb-4">{testimonial.role}</p>
-                  
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <div className="cursor-pointer transition-all duration-300 ease-out hover:scale-[1.03] hover:shadow-xl">
-                        <img
-                          src={testimonial.image}
-                          alt={testimonial.alt}
-                          className="w-full h-auto object-contain rounded-xl shadow-md"
-                        />
-                      </div>
-                    </DialogTrigger>
-                    <DialogContent className="max-w-4xl">
+              <div key={index} className="flex flex-col items-center text-center">
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <div className="cursor-pointer transition-all duration-300 ease-out hover:scale-[1.03] hover:shadow-xl mb-4">
                       <img
                         src={testimonial.image}
                         alt={testimonial.alt}
-                        className="w-full h-auto object-contain rounded-xl"
+                        className="w-full h-auto object-contain rounded-xl shadow-md"
                       />
-                    </DialogContent>
-                  </Dialog>
-                </CardContent>
-              </Card>
+                    </div>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-4xl">
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.alt}
+                      className="w-full h-auto object-contain rounded-xl"
+                    />
+                  </DialogContent>
+                </Dialog>
+                
+                <div className="flex gap-1 mb-2">
+                  {Array.from({ length: testimonial.rating }).map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <p className="font-semibold text-lg mb-1">{testimonial.name}</p>
+                <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+              </div>
             ))}
           </div>
         </div>
