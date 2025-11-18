@@ -13,7 +13,7 @@ const WelcomeSection = () => {
           />
 
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Somos el puente de mas de 1.000 personas al mundo de monetizacion en redes sociales.
+            Somos el puente de mas de 1.000 personas al mundo de monetizacion en redes sociales
           </h2>
         </div>
 

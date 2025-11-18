@@ -1,8 +1,8 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, FileText } from "lucide-react";
-import personalbranding from "@/assets/personal-branding.jpg";
-import ventasdigitales from "@/assets/ventas-digitales.jpg";
+import personalbranding from "@/assets/covers/personal-branding.jpg";
+import ventasdigitales from "@/assets/covers/ventas-digitales.jpg";
 
 
 const ResourcesSection = () => {

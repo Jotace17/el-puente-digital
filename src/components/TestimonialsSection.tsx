@@ -2,35 +2,33 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Star } from "lucide-react";
 
+import testimonio_hellen from "@/assets/testimonios/testimonio-hellen-digital.jpeg";
+import testimonio_marketea from "@/assets/testimonios/testimonio-marketeamama.jpeg";
+import testimonio_maria from "@/assets/testimonios/testimonio-maria-hernandez.jpeg";
+
+
 const TestimonialsSection = () => {
   const testimonials = [
     {
-      name: "Laura Martínez",
+      name: "María Hernandez",
       role: "Consultora de Marca Personal",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&auto=format&fit=crop",
-      alt: "Testimonio de Laura Martínez sobre el programa",
+      image: testimonio_maria,
+      alt: "Testimonio de Maria hernandez sobre el programa",
     },
     {
-      name: "Carlos Ramírez",
-      role: "Creador de Contenido",
-      rating: 5,
-      image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&auto=format&fit=crop",
-      alt: "Testimonio de Carlos Ramírez sobre estrategias efectivas",
-    },
-    {
-      name: "Ana Fernández",
+      name: "Marketeamama",
       role: "Coach Digital",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&auto=format&fit=crop",
-      alt: "Testimonio de Ana Fernández sobre acompañamiento",
+      image: testimonio_marketea,
+      alt: "Testimonio de Marketeamama sobre estrategias efectivas",
     },
     {
-      name: "Diego Torres",
-      role: "Emprendedor Digital",
+      name: "Hellen Digital",
+      role: "Creadora de Contenido",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=800&auto=format&fit=crop",
-      alt: "Testimonio de Diego Torres sobre contenido actualizado",
+      image: testimonio_hellen,
+      alt: "Testimonio de Hellen sobre acompañamiento",
     },
   ];
 
@@ -47,14 +45,6 @@ const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="overflow-hidden shadow-md">
               <CardContent className="p-6">
-                <div className="flex gap-1 mb-3">
-                  {Array.from({ length: testimonial.rating }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <p className="font-semibold text-lg mb-1">{testimonial.name}</p>
-                <p className="text-sm text-muted-foreground mb-4">{testimonial.role}</p>
-                
                 <Dialog>
                   <DialogTrigger asChild>
                     <div className="cursor-pointer transition-all duration-300 ease-out hover:scale-[1.03] hover:shadow-xl">
@@ -73,6 +63,15 @@ const TestimonialsSection = () => {
                     />
                   </DialogContent>
                 </Dialog>
+
+                <div className="flex gap-1 mt-3 mb-1">
+                  {Array.from({ length: testimonial.rating }).map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <p className="font-semibold text-lg mb-1">{testimonial.name}</p>
+                <p className="text-sm text-muted-foreground mb-4">{testimonial.role}</p>
+                
               </CardContent>
             </Card>
           ))}

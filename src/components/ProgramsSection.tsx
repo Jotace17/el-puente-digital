@@ -3,25 +3,40 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Clock, BarChart } from "lucide-react";
 
+import cover_mujeres_de_impacto from "@/assets/covers/mujeres-de-impacto.jpg";
+import cover_ugc from "@/assets/covers/ugc.png";
+import cover_edb from "@/assets/covers/edb.png";
+
+
 const ProgramsSection = () => {
   const programs = [
     {
-      title: "Monetización en redes",
-      description: "Aprende a crear contenido estratégico que convierta seguidores en clientes, sin perder tu autenticidad.",
+      title: "El digital bridge",
+      description: "Programa completo de marketing, contenido y ventas digitales. Aprende a crear, vender y automatizar tus resultados.",
       duration: "8 semanas",
       level: "Principiante",
+      image: cover_edb,
+      link: "https://shop.beacons.ai/katherinee_ugc/8b96a046-edae-4c3d-a36e-db66d661570e",
+
     },
     {
-      title: "Marca personal estratégica",
-      description: "Construye una identidad digital sólida y diferenciada que atraiga oportunidades de negocio.",
+      title: "Gana dinero con marcas sin ser influencer",
+      description: "Aprende a crear contenido, contactar marcas y conseguir colaboraciones pagas.",
       duration: "6 semanas",
-      level: "Intermedio",
+      level: "Principiante",
+      image: cover_ugc,
+      link: "https://shop.beacons.ai/katherinee_ugc/bd2a7062-b75d-4324-8385-86960ff63099",
+
+
     },
     {
-      title: "Embudos y automatización",
-      description: "Diseña sistemas de venta automatizados que trabajen por ti mientras te enfocas en crear valor.",
-      duration: "10 semanas",
-      level: "Avanzado",
+      title: "Membresía: Mujeres de impacto",
+      description: "Accede a una comunidad privada de apoyo femenino con soporte privado, orientación y motivación.",
+      duration: "4 semanas",
+      level: "Intermedio",
+      image: cover_mujeres_de_impacto,
+      link: "https://shop.beacons.ai/katherinee_ugc/f071acce-2acf-4e2f-87fb-4e240c6d3d33",
+
     },
   ];
 
@@ -39,7 +54,14 @@ const ProgramsSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {programs.map((program, index) => (
-            <Card key={index} className="flex flex-col hover:shadow-xl transition-shadow">
+            <Card key={index} className="overflow-hidden flex flex-col hover:shadow-xl group transition-shadow">
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src={program.image}
+                  alt={program.title}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
               <CardHeader>
                 <CardTitle className="text-xl">{program.title}</CardTitle>
                 <CardDescription className="text-base mt-2">
@@ -59,7 +81,12 @@ const ProgramsSection = () => {
                 </div>
               </CardContent>
               <CardFooter>
-                <Button variant="outline" className="w-full">
+                <Button 
+                variant="outline" 
+                className="w-full"
+                onClick={() => (window.location.href = program.link)
+                }
+                >
                   Ver detalles
                 </Button>
               </CardFooter>

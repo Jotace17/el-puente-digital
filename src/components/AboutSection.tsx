@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { CheckCircle2 } from "lucide-react";
-import founderPhoto from "@/assets/founder-photo.jpg";
-import maleFounderPhoto from "@/assets/male-founder-photo.jpg";
+import foto_katherine from "@/assets/foto-katy.jpg";
+import foto_troy from "@/assets/foto-troy.jpg";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -105,18 +105,18 @@ const AboutSection = () => {
           <div className="flex flex-col md:flex-row gap-8 items-stretch">
             {/* Co-founder Card 1 */}
             <CoFounderCard
-              name="María González"
+              name="Katherine"
               role="Fundadora y Directora"
-              photo={founderPhoto}
+              photo={foto_katherine}
               bio="Experta en marketing digital y estrategia de contenido."
             />
             
             {/* Co-founder Card 2 */}
             <CoFounderCard
-              name="Carlos Rodríguez"
+              name="Troy"
               role="Co-fundador y Estratega"
-              photo={maleFounderPhoto}
-              bio="Especialista en transformación digital y liderazgo estratégico."
+              photo={foto_troy}
+              bio="Especialista en transformación digital e IA."
             />
           </div>
         </div>
