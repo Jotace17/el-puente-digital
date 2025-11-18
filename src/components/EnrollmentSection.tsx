@@ -14,8 +14,14 @@ const EnrollmentSection = () => {
   ];
 
   return (
-    <section id="inscripcion" className="py-20 bg-slate-900">
-      <div className="max-w-6xl mx-auto px-4">
+    <section id="inscripcion" className="relative py-20 bg-navy overflow-hidden">
+      {/* Animated Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 animate-pulse" style={{ animationDuration: '8s' }} />
+        <div className="hero-pattern" />
+      </div>
+      
+      <div className="max-w-6xl mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
             Únete a El Digital Bridge
