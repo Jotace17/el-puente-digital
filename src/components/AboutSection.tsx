@@ -1,14 +1,9 @@
 import { Card } from "@/components/ui/card";
-import { CheckCircle2 } from "lucide-react";
-import foto_katherine from "@/assets/foto-katy.jpg";
-import foto_troy from "@/assets/foto-troy.jpg";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
+import foto_katherine from "@/assets/founder-katherine-premium.jpg";
+import foto_troy from "@/assets/founder-troy-premium.jpg";
+import { useState } from "react";
+import { cn } from "@/lib/utils";
 
 interface CoFounder {
   name: string;
@@ -22,22 +17,31 @@ const coFounders: CoFounder[] = [
     name: "Katherine",
     role: "Fundadora y Directora",
     photo: foto_katherine,
-    bio: "Experta en marketing digital y estrategia de contenido.",
+    bio: "Experta en marketing digital y estrategia de contenido con más de 10 años de experiencia.",
   },
   {
     name: "Troy",
     role: "Co-fundador y Estratega",
     photo: foto_troy,
-    bio: "Especialista en transformación digital e IA.",
+    bio: "Especialista en transformación digital, IA y desarrollo de negocios sostenibles.",
   },
 ];
 
 const AboutSection = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
   const highlights = [
     "Experiencia real en marketing y educación digital",
     "Metodologías aplicadas al mercado hispanohablante",
     "Comunidad y acompañamiento continuo",
   ];
+
+  const handlePrevious = () => {
+    setCurrentSlide((prev) => (prev === 0 ? coFounders.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentSlide((prev) => (prev === coFounders.length - 1 ? 0 : prev + 1));
+  };
 
   return (
     <section id="sobre-nosotros" className="py-16 md:py-24 bg-background">
@@ -67,32 +71,79 @@ const AboutSection = () => {
             </div>
           </div>
 
-          {/* Right Column - Co-founders Carousel */}
+          {/* Right Column - Premium Founders Sliding Deck */}
           <div className="relative">
-            <Carousel className="w-full max-w-md mx-auto">
-              <CarouselContent>
-                {coFounders.map((founder, index) => (
-                  <CarouselItem key={index}>
-                    <Card className="border border-border bg-card rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl">
-                      <div className="h-[400px] flex flex-col items-center justify-center p-8 text-center space-y-4">
-                        <img
-                          src={founder.photo}
-                          alt={founder.name}
-                          className="w-[140px] h-[140px] rounded-full object-cover shadow-md"
-                        />
-                        <h3 className="text-2xl font-semibold">{founder.name}</h3>
-                        <p className="text-sm text-primary font-medium">{founder.role}</p>
-                        <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
+            <div className="relative w-full max-w-md mx-auto group">
+              {/* Main Slide Container */}
+              <div className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl shadow-black/40 transition-transform duration-300 hover:scale-[1.02]">
+                {/* Slides */}
+                <div 
+                  className="flex h-full transition-transform duration-500 ease-out"
+                  style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                >
+                  {coFounders.map((founder, index) => (
+                    <div key={index} className="min-w-full h-full relative">
+                      {/* Background Image */}
+                      <img 
+                        src={founder.photo}
+                        alt={founder.name}
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                      
+                      {/* Dark Gradient Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                      
+                      {/* Content - Lower Left */}
+                      <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10">
+                        <h3 className="text-4xl md:text-5xl font-bold text-white mb-2 leading-tight">
+                          {founder.name}
+                        </h3>
+                        <p className="text-lg md:text-xl text-white font-semibold mb-3">
+                          {founder.role}
+                        </p>
+                        <p className="text-base text-white/80 leading-relaxed max-w-md">
                           {founder.bio}
                         </p>
                       </div>
-                    </Card>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="left-0" />
-              <CarouselNext className="right-0" />
-            </Carousel>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Navigation Arrows */}
+                <button
+                  onClick={handlePrevious}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-black/60 hover:scale-110"
+                  aria-label="Previous founder"
+                >
+                  <ChevronLeft className="w-6 h-6" />
+                </button>
+                
+                <button
+                  onClick={handleNext}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-black/60 hover:scale-110"
+                  aria-label="Next founder"
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </button>
+
+                {/* Bottom Progress Indicator */}
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+                  {coFounders.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={cn(
+                        "h-1 rounded-full transition-all duration-300",
+                        index === currentSlide 
+                          ? "w-12 bg-white" 
+                          : "w-8 bg-white/40 hover:bg-white/60"
+                      )}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
