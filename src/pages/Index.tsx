@@ -13,7 +13,7 @@ import FaqSection from "@/components/FaqSection";
 import EnrollmentSection from "@/components/EnrollmentSection";
 import FinalCta from "@/components/FinalCta";
 import Footer from "@/components/Footer";
-import DiscountPopup from "@/components/DiscountPopup";
+import BlackFridayPopup from "@/components/BlackFridayPopup";
 
 const Index = () => {
   return (
@@ -33,7 +33,7 @@ const Index = () => {
       <EnrollmentSection />
       <FinalCta />
       <Footer />
-      <DiscountPopup />
+      <BlackFridayPopup />
     </div>
   );
 };
