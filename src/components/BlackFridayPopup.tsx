@@ -8,8 +8,8 @@ const BlackFridayPopup = () => {
   const [hasBeenClosed, setHasBeenClosed] = useState(false);
 
   useEffect(() => {
-    // Check if popup was already closed
-    const wasClosed = localStorage.getItem("blackFridayPopupClosed");
+    // Check if popup was already closed in this session
+    const wasClosed = sessionStorage.getItem("blackFridayPopupClosed");
     if (wasClosed) {
       setHasBeenClosed(true);
       return;
@@ -50,7 +50,7 @@ const BlackFridayPopup = () => {
   const handleClose = () => {
     setIsVisible(false);
     setHasBeenClosed(true);
-    localStorage.setItem("blackFridayPopupClosed", "true");
+    sessionStorage.setItem("blackFridayPopupClosed", "true");
   };
 
   const handleNavigate = () => {
@@ -86,33 +86,35 @@ const BlackFridayPopup = () => {
         </button>
         
         {/* Content */}
-        <div className="relative h-full flex flex-col justify-end p-8 md:p-12">
-          <div className="max-w-2xl">
-            {/* Main Title */}
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
-              Black Friday Mega Sale
-            </h2>
-            
-            {/* Subtitle */}
-            <p className="text-xl md:text-2xl text-white font-medium mb-8 leading-relaxed">
-              Get 20% OFF<br />
-              El Digital Bridge today only.<br />
-              Now 399 USD <span className="line-through opacity-70">(before 499 USD)</span>.
-            </p>
-            
-            {/* CTA Button */}
-            <Button 
-              onClick={handleNavigate}
-              size="lg"
-              className="w-full md:w-auto min-w-[300px] bg-[#a6ff01] hover:bg-[#95e600] text-black font-bold text-lg py-6 px-12 rounded-xl transition-all shine-effect"
-            >
-              Lo quiero ya!
-            </Button>
-            
-            {/* Footer Text */}
-            <p className="text-white/60 text-sm mt-8">
-              We respect your decisions. Privacy policy
-            </p>
+        <div className="relative h-full flex flex-col justify-end">
+          <div className="h-1/3 flex items-center p-8 md:p-12">
+            <div className="max-w-2xl w-full">
+              {/* Main Title */}
+              <h2 className="text-3xl md:text-5xl font-bold text-white mb-3 leading-tight">
+                Black Friday Mega Sale
+              </h2>
+              
+              {/* Subtitle */}
+              <p className="text-lg md:text-xl text-white font-medium mb-6 leading-relaxed">
+                Get 20% OFF<br />
+                El Digital Bridge today only.<br />
+                Now 399 USD <span className="line-through opacity-70">(before 499 USD)</span>.
+              </p>
+              
+              {/* CTA Button */}
+              <Button 
+                onClick={handleNavigate}
+                size="lg"
+                className="w-full md:w-auto min-w-[300px] bg-[#a6ff01] hover:bg-[#95e600] text-black font-bold text-lg py-6 px-12 rounded-xl transition-all shine-effect"
+              >
+                Lo quiero ya!
+              </Button>
+              
+              {/* Footer Text */}
+              <p className="text-white/60 text-sm mt-6">
+                We respect your decisions. Privacy policy
+              </p>
+            </div>
           </div>
         </div>
       </div>
