@@ -75,7 +75,7 @@ const AboutSection = () => {
           <div className="relative">
             <div className="relative w-full max-w-md mx-auto group">
               {/* Main Slide Container */}
-              <div className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl shadow-black/40 transition-transform duration-300 hover:scale-[1.02]">
+              <div className="relative h-[480px] rounded-3xl overflow-hidden shadow-2xl shadow-black/40 transition-transform duration-300 hover:scale-[1.02]">
                 {/* Slides */}
                 <div 
                   className="flex h-full transition-transform duration-500 ease-out"
