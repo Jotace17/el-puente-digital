@@ -8,47 +8,17 @@ const GrowthStatsSection = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
-  useEffect(() => {
-    if (isInView && !isAnimating) {
-      setIsAnimating(true);
-      
-      // Enhanced slot machine shuffle animation
-      const duration = 2000;
-      const startTime = Date.now();
-      let frame = 0;
-      
-      const interval = setInterval(() => {
-        const elapsed = Date.now() - startTime;
-        frame++;
-        
-        if (elapsed < duration) {
-          // Slot machine effect - each digit rolling independently
-          const progress = elapsed / duration;
-          const rollSpeed = Math.max(30, 80 * (1 - progress)); // Slow down gradually
-          
-          if (frame % Math.floor(rollSpeed / 30) === 0) {
-            // Generate rolling digits
-            const digit1 = Math.floor(Math.random() * 10);
-            const digit2 = Math.floor(Math.random() * 10);
-            const digit3 = Math.floor(Math.random() * 10);
-            const digit4 = Math.floor(Math.random() * 10);
-            const digit5 = Math.floor(Math.random() * 10);
-            const digit6 = Math.floor(Math.random() * 10);
-            
-            setDisplayNumber(`${digit1}${digit2}${digit3}.${digit4}${digit5}${digit6}`);
-          }
-        } else {
-          // Final value with smooth transition
-          setDisplayNumber("300.000");
-          clearInterval(interval);
-          // Trigger cash animation after number stops
-          setTimeout(() => setShowCash(true), 300);
-        }
-      }, 16); // ~60fps
+useEffect(() => {
+  if (isInView && !isAnimating) {
+    setIsAnimating(true);
 
-      return () => clearInterval(interval);
-    }
-  }, [isInView, isAnimating]);
+    // Immediately set the final number
+    setDisplayNumber("300.000");
+
+    // Trigger cash animation slightly after appearing
+    setTimeout(() => setShowCash(true), 300);
+  }
+}, [isInView, isAnimating]);
 
   return (
     <section 
@@ -131,7 +101,7 @@ const GrowthStatsSection = () => {
           className="max-w-4xl mx-auto mt-16 space-y-6"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 2.2, ease: "easeOut" }}
+          transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}
         >
           <div className="bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 rounded-2xl p-8 md:p-10 border border-primary/10 shadow-lg">
             <p className="text-center text-foreground font-bold text-xl md:text-2xl mb-6">

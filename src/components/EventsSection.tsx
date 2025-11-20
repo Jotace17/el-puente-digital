@@ -12,17 +12,24 @@ const EventsSection = () => {
   const events = [
     {
       title: "Masterclass: Primeros pasos en marketing digital",
-      date: "15 de Marzo, 2025",
+      date: "15 de Diciembre, 2025",
       time: "18:00 - 19:30 GMT-5",
       modality: "Online",
       description: "Aprende los fundamentos para iniciar tu negocio digital de forma efectiva.",
     },
     {
       title: "Workshop: Estrategias de contenido para redes",
-      date: "22 de Marzo, 2025",
+      date: "22 de Diciembre, 2025",
       time: "17:00 - 20:00 GMT-5",
       modality: "Online",
       description: "Sesión práctica para crear un calendario de contenido que convierta.",
+    },
+    {
+      title: "Workshop: Cómo tener mentalidad de tiburón",
+      date: "4 de Enero, 2026",
+      time: "17:00 - 20:00 GMT-5",
+      modality: "Online",
+      description: "Sesión práctica para el año con el pie derecho.",
     },
   ];
 
@@ -99,7 +106,7 @@ const EventsSection = () => {
             <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4">
               <Input
                 type="email"
-                placeholder="tu@email.com"
+                placeholder="Escribe tu correo electrónico..."
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required

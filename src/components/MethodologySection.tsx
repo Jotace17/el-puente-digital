@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { motion, useInView } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
+import chart from "@/assets/chart.png";
 
 const MethodologySection = () => {
   const sectionRef = useRef(null);
@@ -61,26 +62,12 @@ const MethodologySection = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Column - Abstract Illustration */}
           <div className="relative">
-            <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-8 flex items-center justify-center">
-              <svg
-                viewBox="0 0 200 200"
-                className="w-full h-full"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <defs>
-                  <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style={{ stopColor: "hsl(var(--primary))", stopOpacity: 0.3 }} />
-                    <stop offset="100%" style={{ stopColor: "hsl(var(--primary))", stopOpacity: 0.8 }} />
-                  </linearGradient>
-                </defs>
-                <circle cx="100" cy="50" r="25" fill="url(#grad1)" opacity="0.6" />
-                <circle cx="60" cy="120" r="30" fill="url(#grad1)" opacity="0.5" />
-                <circle cx="140" cy="140" r="35" fill="url(#grad1)" opacity="0.7" />
-                <line x1="100" y1="75" x2="80" y2="95" stroke="hsl(var(--primary))" strokeWidth="2" opacity="0.6" />
-                <line x1="100" y1="75" x2="120" y2="115" stroke="hsl(var(--primary))" strokeWidth="2" opacity="0.6" />
-                <line x1="85" y1="135" x2="115" y2="125" stroke="hsl(var(--primary))" strokeWidth="2" opacity="0.6" />
-              </svg>
-            </div>
+              
+              <img
+                src={chart}
+                alt="chart"
+                className="w-full max-w-[400px] mx-auto h-auto object-contain rounded-xl shadow-md"
+              />
           </div>
 
           {/* Right Column - Content */}
@@ -110,7 +97,7 @@ const MethodologySection = () => {
                   key={index}
                   initial={{ opacity: 0, x: -30 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.4 + (index * 0.1), ease: "easeOut" }}
+                  transition={{ duration: 0.6, delay: 0.9 + (index * 0.1), ease: "easeOut" }}
                 >
                   <div className="flex justify-between mb-2">
                     <span className="text-sm font-medium">{metric.label}</span>
@@ -126,7 +113,7 @@ const MethodologySection = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+              transition={{ duration: 0.6, delay: 1.1, ease: "easeOut" }}
             >
               <Button variant="outline" size="lg">
                 Conocer la metodología completa
