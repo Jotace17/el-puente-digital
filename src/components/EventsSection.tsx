@@ -92,7 +92,7 @@ const EventsSection = () => {
               ¿No puedes asistir ahora?
             </CardTitle>
             <CardDescription className="text-base">
-              Suscríbete y te avisamos de las próximas fechas
+              ¡Te notificamos de las próximas fechas!
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -106,7 +106,7 @@ const EventsSection = () => {
                 className="flex-grow"
               />
               <Button type="submit" className="sm:w-auto">
-                Suscribirme
+                Avísame
               </Button>
             </form>
           </CardContent>
