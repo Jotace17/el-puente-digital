@@ -14,7 +14,7 @@ const KeyAreasSection = () => {
   ];
 
   return (
-    <section id="areas-clave" className="py-20 bg-gradient-to-br from-slate-50 via-slate-100 to-slate-50 relative overflow-hidden">
+    <section id="areas-clave" className="py-20 bg-background relative overflow-hidden">
       {/* Subtle geometric background pattern */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
