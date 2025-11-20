@@ -35,7 +35,7 @@ const EventsSection = () => {
   };
 
   return (
-    <section id="eventos" className="py-16 md:py-24 bg-section-bg">
+    <section id="eventos" className="py-16 md:py-24 bg-background">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Próximos eventos</h2>
