@@ -2,7 +2,6 @@ import { useEffect, useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const GrowthStatsSection = () => {
-  const [displayNumber, setDisplayNumber] = useState("300.000");
   const [isAnimating, setIsAnimating] = useState(false);
   const [showCash, setShowCash] = useState(false);
   const sectionRef = useRef(null);
@@ -13,7 +12,6 @@ useEffect(() => {
     setIsAnimating(true);
 
     // Immediately set the final number
-    setDisplayNumber("300.000");
 
     // Trigger cash animation slightly after appearing
     setTimeout(() => setShowCash(true), 3500);
@@ -75,7 +73,7 @@ useEffect(() => {
             <div className="absolute inset-0 blur-2xl opacity-30 bg-gradient-to-r from-primary via-accent to-primary animate-pulse" style={{ animationDuration: '3s' }} />
             
             <h2 
-              className="text-7xl md:text-8xl lg:text-9xl font-black text-foreground relative tracking-tight"
+              className="alfa-slab text-7xl md:text-8xl lg:text-9xl text-foreground relative tracking-tight"
               style={{
                 textShadow: `
                   3px 3px 0 hsl(var(--primary) / 0.4),
@@ -84,11 +82,11 @@ useEffect(() => {
                   12px 12px 25px hsl(var(--primary) / 0.2)
                 `,
                 transform: "translateZ(30px)",
-                fontWeight: 900,
+                fontWeight: 700,
                 letterSpacing: '-0.02em'
               }}
             >
-              {displayNumber}
+             $300.000
             </h2>
           </div>
           <p className="mt-4 text-xl md:text-2xl text-muted-foreground font-semibold">

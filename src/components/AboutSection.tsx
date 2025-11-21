@@ -17,13 +17,13 @@ const coFounders: CoFounder[] = [
     name: "Katherine",
     role: "Fundadora y Directora",
     photo: foto_katherine,
-    bio: "Experta en marketing digital y estrategia de contenido con más de 10 años de experiencia.",
+    bio: "Experta en marketing digital y estrategia de contenido.",
   },
   {
     name: "Troy",
     role: "Co-fundador y Estratega",
     photo: foto_troy,
-    bio: "Especialista en transformación digital, IA y desarrollo de negocios sostenibles.",
+    bio: "Especialista en transformación digital, IA y reclutador IT.",
   },
 ];
 
