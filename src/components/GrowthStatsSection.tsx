@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const GrowthStatsSection = () => {
-  const [displayNumber, setDisplayNumber] = useState("000.000");
+  const [displayNumber, setDisplayNumber] = useState("300.000");
   const [isAnimating, setIsAnimating] = useState(false);
   const [showCash, setShowCash] = useState(false);
   const sectionRef = useRef(null);
@@ -68,7 +68,7 @@ useEffect(() => {
           className="text-center mb-12"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 6, ease: "easeOut" }}
         >
           <div className="relative inline-block">
             {/* Glow effect behind number */}
