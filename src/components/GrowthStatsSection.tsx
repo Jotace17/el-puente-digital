@@ -16,7 +16,7 @@ useEffect(() => {
     setDisplayNumber("300.000");
 
     // Trigger cash animation slightly after appearing
-    setTimeout(() => setShowCash(true), 300);
+    setTimeout(() => setShowCash(true), 3500);
   }
 }, [isInView, isAnimating]);
 
@@ -68,7 +68,7 @@ useEffect(() => {
           className="text-center mb-12"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 6, ease: "easeOut" }}
+          transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
         >
           <div className="relative inline-block">
             {/* Glow effect behind number */}

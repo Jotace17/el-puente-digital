@@ -104,7 +104,7 @@ const BlackFridayPopup = () => {
               {/* CTA Button */}
               <Button 
                 size="lg"
-                className="w-full md:w-auto min-w-[300px] bg-[#a6ff01] hover:bg-[#95e600] text-black font-bold text-lg py-6 px-12 rounded-xl transition-all shine-effect"
+                className="w-full md:w-auto min-w-[300px] bg-[#a6ff01] hover:bg-[#95e600] text-black font-bold text-lg py-6 px-12 pb-6 rounded-xl transition-all shine-effect"
                 onClick={() =>
                 (window.location.href =
                   "https://shop.beacons.ai/katherinee_ugc/8b96a046-edae-4c3d-a36e-db66d661570e")
