@@ -96,16 +96,19 @@ const BlackFridayPopup = () => {
               
               {/* Subtitle */}
               <p className="text-lg md:text-xl text-white font-medium mb-6 leading-relaxed">
-                Get 20% OFF<br />
-                El Digital Bridge today only.<br />
-                Now 399 USD <span className="line-through opacity-70">(before 499 USD)</span>.
+                Obten un 20% de descuento<br />
+                Acceso completo a El Digital Bridge.<br />
+                Ahora 399 USD <span className="line-through opacity-70">(antes 499 USD)</span>.
               </p>
               
               {/* CTA Button */}
               <Button 
-                onClick={handleNavigate}
                 size="lg"
                 className="w-full md:w-auto min-w-[300px] bg-[#a6ff01] hover:bg-[#95e600] text-black font-bold text-lg py-6 px-12 rounded-xl transition-all shine-effect"
+                onClick={() =>
+                (window.location.href =
+                  "https://shop.beacons.ai/katherinee_ugc/8b96a046-edae-4c3d-a36e-db66d661570e")
+                }
               >
                 Lo quiero ya!
               </Button>
