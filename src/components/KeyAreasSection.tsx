@@ -35,7 +35,7 @@ const KeyAreasSection = () => {
           {keywords.map((keyword, index) => (
             <div
               key={index}
-              className="px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full border border-primary/20 shadow-sm hover:shadow-md hover:border-primary/40 transition-all duration-300 animate-float"
+              className="px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full border-2 border-primary/30 shadow-sm hover:shadow-md hover:border-primary/60 transition-all duration-300 animate-float"
               style={{
                 animationDelay: `${index * 0.1}s`,
                 animationDuration: `${3 + (index % 3)}s`,

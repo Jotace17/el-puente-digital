@@ -50,12 +50,12 @@ const AboutSection = () => {
           {/* Left Column */}
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">¿Quiénes somos?</h2>
-            <p className="text-lg text-muted-foreground mb-6">
+            <p className="text-lg text-muted-foreground mb-6 text-justify">
               El Digital Bridge nace de la necesidad de ofrecer formación práctica,
               ética y actualizada para profesionales que quieren monetizar su
               conocimiento en el entorno digital.
             </p>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-lg text-muted-foreground mb-8 text-justify">
               Trabajamos con metodologías probadas, enfocadas en resultados reales
               y sostenibles, sin promesas exageradas ni atajos que comprometan tu
               credibilidad.
@@ -65,7 +65,7 @@ const AboutSection = () => {
               {highlights.map((highlight, index) => (
                 <div key={index} className="flex items-start gap-3">
                   <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                  <p className="text-base">{highlight}</p>
+                  <p className="text-lg text-muted-foreground">{highlight}</p>
                 </div>
               ))}
             </div>

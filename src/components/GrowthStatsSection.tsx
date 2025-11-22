@@ -73,7 +73,7 @@ useEffect(() => {
             <div className="absolute inset-0 blur-2xl opacity-30 bg-gradient-to-r from-primary via-accent to-primary animate-pulse" style={{ animationDuration: '3s' }} />
             
             <h2 
-              className="alfa-slab text-7xl md:text-8xl lg:text-9xl text-foreground relative tracking-tight"
+              className="alfa-slab text-6xl md:text-8xl lg:text-9xl text-foreground relative tracking-tight"
               style={{
                 textShadow: `
                   3px 3px 0 hsl(var(--primary) / 0.4),
@@ -82,7 +82,7 @@ useEffect(() => {
                   12px 12px 25px hsl(var(--primary) / 0.2)
                 `,
                 transform: "translateZ(30px)",
-                fontWeight: 700,
+                fontWeight: 900,
                 letterSpacing: '-0.02em'
               }}
             >
