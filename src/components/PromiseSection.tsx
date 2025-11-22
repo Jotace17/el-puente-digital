@@ -24,7 +24,7 @@ const PromiseSection = () => {
   ];
 
   return (
-    <section id="promesa" className="py-20 bg-background">
+    <section id="promesa" className="relative py-20 bg-background">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Nuestra Promesa</h2>
@@ -57,6 +57,8 @@ const PromiseSection = () => {
           })}
         </div>
       </div>
+      {/* Bottom section divider */}
+      <div className="absolute bottom-0 left-0 w-full h-px bg-navy/5"></div>
     </section>
   );
 };

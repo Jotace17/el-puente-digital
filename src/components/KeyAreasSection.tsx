@@ -70,6 +70,8 @@ const KeyAreasSection = () => {
           </Button>
         </div>
       </div>
+      {/* Bottom section divider */}
+      <div className="absolute bottom-0 left-0 w-full h-px bg-navy/5"></div>
     </section>
   );
 };

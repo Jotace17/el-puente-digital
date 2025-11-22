@@ -44,7 +44,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="sobre-nosotros" className="py-16 md:py-24 bg-background">
+    <section id="sobre-nosotros" className="relative py-16 md:py-24 bg-background">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Column */}
@@ -147,6 +147,8 @@ const AboutSection = () => {
           </div>
         </div>
       </div>
+      {/* Bottom section divider */}
+      <div className="absolute bottom-0 left-0 w-full h-px bg-navy/5"></div>
     </section>
   );
 };

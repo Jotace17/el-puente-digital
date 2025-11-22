@@ -4,7 +4,7 @@ import Banderas from "@/assets/Banderas.png";
 
 const WelcomeSection = () => {
   return (
-    <section id="bienvenida" className="py-20 bg-background">
+    <section id="bienvenida" className="relative py-20 bg-background">
       <div className="max-w-4xl mx-auto px-4">
         <div className="text-center mb-12">
           <img
@@ -31,6 +31,8 @@ const WelcomeSection = () => {
           </div>
         </Card>
       </div>
+      {/* Bottom section divider */}
+      <div className="absolute bottom-0 left-0 w-full h-px bg-navy/5"></div>
     </section>
   );
 };

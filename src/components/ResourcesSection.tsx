@@ -25,7 +25,7 @@ const ResourcesSection = () => {
   ];
 
   return (
-    <section id="recursos" className="py-16 md:py-24 bg-background">
+    <section id="recursos" className="relative py-16 md:py-24 bg-background">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -89,6 +89,8 @@ const ResourcesSection = () => {
           </Button>
         </div>
       </div>
+      {/* Bottom section divider */}
+      <div className="absolute bottom-0 left-0 w-full h-px bg-navy/5"></div>
     </section>
   );
 };

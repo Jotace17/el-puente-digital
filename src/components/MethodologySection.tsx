@@ -48,7 +48,7 @@ const MethodologySection = () => {
   }, [isInView]);
 
   return (
-    <section ref={sectionRef} id="metodologia" className="py-20 bg-background">
+    <section ref={sectionRef} id="metodologia" className="relative py-20 bg-background">
       <div className="max-w-6xl mx-auto px-4">
         <motion.h2 
           className="text-3xl md:text-4xl font-bold mb-12 text-center"
@@ -122,6 +122,8 @@ const MethodologySection = () => {
           </div>
         </div>
       </div>
+      {/* Bottom section divider */}
+      <div className="absolute bottom-0 left-0 w-full h-px bg-navy/5"></div>
     </section>
   );
 };
