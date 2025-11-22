@@ -36,25 +36,45 @@ const ResourcesSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          className="
+            flex 
+            flex-wrap 
+            justify-center 
+            gap-8
+          "
+        >
           {resources.map((resource, index) => (
-            <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow group border-0 shadow-md">
-              <div className="aspect-video overflow-hidden">
-                <img
-                  src={resource.image}
-                  alt={resource.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle className="text-xl">{resource.title}</CardTitle>
-                <CardDescription className="text-base mt-2">
-                  {resource.description}
-                </CardDescription>
-              </CardHeader>
-            </Card>
+            <div
+              key={index}
+              className="
+                w-[85%]
+                md:w-[45%]
+                lg:w-[30%]
+                flex
+                justify-center
+              "
+            >
+              <Card className="overflow-hidden hover:shadow-xl transition-shadow group border-0 shadow-md w-full">
+                <div className="aspect-video overflow-hidden">
+                  <img
+                    src={resource.image}
+                    alt={resource.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                <CardHeader>
+                  <CardTitle className="text-xl">{resource.title}</CardTitle>
+                  <CardDescription className="text-base mt-2">
+                    {resource.description}
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </div>
           ))}
         </div>
+
 
         <div className="flex justify-center mt-12">
           <Button 

@@ -39,7 +39,7 @@ const PromiseSection = () => {
             return (
               <Card
                 key={index}
-                className="border-0 shadow-md hover:shadow-xl transition-shadow"
+                className="border-0 shadow-md hover:shadow-xl transition-shadow w-[85%] mx-auto md:w-full"
               >
                 <CardHeader className="text-center">
                   <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">

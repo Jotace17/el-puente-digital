@@ -52,45 +52,65 @@ const ProgramsSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          className="
+            flex 
+            flex-wrap 
+            justify-center 
+            gap-8
+          "
+        >
           {programs.map((program, index) => (
-            <Card key={index} className="overflow-hidden flex flex-col hover:shadow-xl group transition-shadow">
-              <div className="aspect-video overflow-hidden">
-                <img
-                  src={program.image}
-                  alt={program.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle className="text-xl">{program.title}</CardTitle>
-                <CardDescription className="text-base mt-2">
-                  {program.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <div className="flex gap-4 text-sm text-muted-foreground">
-                  <div className="flex items-center gap-2">
-                    <Clock className="h-4 w-4" />
-                    {program.duration}
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <BarChart className="h-4 w-4" />
-                    <Badge variant="secondary">{program.level}</Badge>
-                  </div>
+            <div
+              key={index}
+              className="
+                w-[85%]
+                md:w-[45%]
+                lg:w-[30%]
+                flex
+                justify-center
+              "
+            >
+              <Card className="overflow-hidden flex flex-col hover:shadow-xl group transition-shadow w-full">
+                <div className="aspect-video overflow-hidden">
+                  <img
+                    src={program.image}
+                    alt={program.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
                 </div>
-              </CardContent>
-              <CardFooter>
-                <Button 
-                variant="outline" 
-                className="w-full"
-                onClick={() => (window.location.href = program.link)
-                }
-                >
-                  Ver detalles
-                </Button>
-              </CardFooter>
-            </Card>
+
+                <CardHeader>
+                  <CardTitle className="text-xl">{program.title}</CardTitle>
+                  <CardDescription className="text-base mt-2">
+                    {program.description}
+                  </CardDescription>
+                </CardHeader>
+
+                <CardContent className="flex-grow">
+                  <div className="flex gap-4 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-2">
+                      <Clock className="h-4 w-4" />
+                      {program.duration}
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <BarChart className="h-4 w-4" />
+                      <Badge variant="secondary">{program.level}</Badge>
+                    </div>
+                  </div>
+                </CardContent>
+
+                <CardFooter>
+                  <Button
+                    variant="outline"
+                    className="w-full"
+                    onClick={() => (window.location.href = program.link)}
+                  >
+                    Ver detalles
+                  </Button>
+                </CardFooter>
+              </Card>
+            </div>
           ))}
         </div>
       </div>

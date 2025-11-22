@@ -60,36 +60,58 @@ const EventsSection = () => {
             </CardContent>
           </Card>
         ) : (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div
+            className="
+              flex 
+              flex-wrap 
+              justify-center 
+              gap-8 
+              mb-12
+            "
+          >
             {events.map((event, index) => (
-              <Card key={index} className="hover:shadow-xl transition-shadow">
-                <CardHeader>
-                  <div className="flex items-center gap-2 mb-2">
-                    <Badge>{event.modality}</Badge>
-                  </div>
-                  <CardTitle className="text-xl">{event.title}</CardTitle>
-                  <CardDescription className="text-base mt-2">
-                    {event.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Calendar className="h-4 w-4" />
-                    {event.date}
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Clock className="h-4 w-4" />
-                    {event.time}
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <MapPin className="h-4 w-4" />
-                    {event.modality}
-                  </div>
-                  <Button className="w-full mt-4">Registrarme</Button>
-                </CardContent>
-              </Card>
+              <div
+                key={index}
+                className="
+                  w-[85%]
+                  md:w-[45%]
+                  lg:w-[30%]
+                  flex
+                  justify-center
+                "
+              >
+                <Card className="hover:shadow-xl transition-shadow w-full">
+                  <CardHeader>
+                    <div className="flex items-center gap-2 mb-2">
+                      <Badge>{event.modality}</Badge>
+                    </div>
+                    <CardTitle className="text-xl">{event.title}</CardTitle>
+                    <CardDescription className="text-base mt-2">
+                      {event.description}
+                    </CardDescription>
+                  </CardHeader>
+
+                  <CardContent className="space-y-3">
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <Calendar className="h-4 w-4" />
+                      {event.date}
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <Clock className="h-4 w-4" />
+                      {event.time}
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <MapPin className="h-4 w-4" />
+                      {event.modality}
+                    </div>
+
+                    <Button className="w-full mt-4">Registrarme</Button>
+                  </CardContent>
+                </Card>
+              </div>
             ))}
           </div>
+
         )}
 
         {/* Newsletter Section */}
