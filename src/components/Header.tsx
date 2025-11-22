@@ -32,7 +32,10 @@ const Header = () => {
     >
       <nav className="max-w-6xl mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <a href="#inicio" className="text-2xl font-serif font-bold text-foreground">
+          <a
+            href="#inicio"
+            className="text-2xl font-serif font-bold text-foreground"
+          >
             El Digital Bridge
           </a>
 
