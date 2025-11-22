@@ -30,6 +30,7 @@ const Hero = () => {
             className="
               text-4xl md:text-5xl lg:text-6xl 
               font-bold text-navy-foreground mb-2
+              items-center text-center lg:text-left
               order-1 lg:col-start-1 lg:row-start-1
             "
           >
@@ -64,6 +65,7 @@ const Hero = () => {
           <div
             className="
               text-navy-foreground order-3 
+              items-center text-center lg:text-left
               lg:col-start-1 lg:row-start-2
               lg:-mt-52
             "
@@ -78,19 +80,10 @@ const Hero = () => {
               monetizar de forma ética, sostenible y con acompañamiento.
             </motion.p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center text-center lg:justify-start">
               <Button
                 size="lg"
-                className="text-base"
-                onClick={() => (window.location.href = "#programas")}
-              >
-                Explorar programas
-              </Button>
-
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-base bg-navy-foreground/10 text-navy-foreground hover:border-navy-foreground/10"
+                className="text-base lg:w-[95%]"
                 onClick={() => (window.location.href = "#eventos")}
               >
                 Ver próximos eventos
