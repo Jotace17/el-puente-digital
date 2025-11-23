@@ -73,6 +73,7 @@ const EnrollmentSection = () => {
           ¿Tienes dudas? Contáctanos y te ayudamos a empezar.
         </p>
       </div>
+      <div className="absolute bottom-0 left-0 w-full h-px bg-white/5"></div>
     </section>
   );
 };
