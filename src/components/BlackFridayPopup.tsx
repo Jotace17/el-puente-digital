@@ -86,7 +86,7 @@ const BlackFridayPopup = () => {
         </button>
         
         {/* Content */}
-        <div className="relative h-full flex flex-col justify-end">
+        <div className="relative h-full flex flex-col justify-end sm:pb-8">
           <div className="h-1/3 flex items-center p-8 md:p-12">
             <div className="max-w-2xl w-full">
               {/* Main Title */}
