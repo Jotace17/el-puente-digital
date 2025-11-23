@@ -16,8 +16,11 @@ const EnrollmentSection = () => {
   return (
     <section id="inscripcion" className="relative py-20 bg-navy overflow-hidden">
       {/* Animated Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 animate-pulse" style={{ animationDuration: '8s' }} />
+      <div className="absolute inset-0 opacity-30">
+        <div 
+          className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 animate-pulse" 
+          style={{ animationDuration: '8s' }} 
+        />
         <div className="hero-pattern" />
       </div>
       
@@ -73,7 +76,7 @@ const EnrollmentSection = () => {
           ¿Tienes dudas? Contáctanos y te ayudamos a empezar.
         </p>
       </div>
-      <div className="absolute bottom-0 left-0 w-full h-px bg-white/5"></div>
+      <div className="absolute bottom-0 left-0 w-full h-px bg-navy/5"></div>
     </section>
   );
 };

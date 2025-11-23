@@ -7,7 +7,16 @@ interface FinalCtaProps {
 
 const FinalCta = ({ showPrograms, setShowPrograms }: FinalCtaProps) => {
   return (
-    <section id="contacto" className="py-16 md:py-24 bg-navy">
+    <section id="contacto" className="relative py-16 md:py-24 bg-navy">
+      {/* Animated Background Pattern */}
+      <div className="absolute inset-0 opacity-30">
+        <div 
+          className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 animate-pulse" 
+          style={{ animationDuration: '8s' }} 
+        />
+        <div className="hero-pattern" />
+      </div>
+
       <div className="max-w-4xl mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-navy-foreground">
           ¿Lista para cruzar el puente digital?
