@@ -10,7 +10,14 @@ const FinalCta = () => {
         <p className="text-lg md:text-xl mb-8 text-navy-foreground/90 max-w-2xl mx-auto">
           Cuéntanos en qué etapa estás y te recomendamos el programa ideal para ti
         </p>
-        <Button size="lg" className="text-base px-8">
+        <Button 
+          size="lg" 
+          className="text-base px-8"
+          onClick={() =>
+            (window.location.href =
+              "https://ig.me/m/eldigitalbridge")
+            }
+        >
           Hablar con nosotros
         </Button>
       </div>

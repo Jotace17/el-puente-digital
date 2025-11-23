@@ -67,11 +67,11 @@ const TestimonialsSection = () => {
               >
                 <Dialog>
                   <DialogTrigger asChild>
-                    <div className="cursor-pointer transition-all duration-300 ease-out hover:scale-[1.03] hover:shadow-xl mb-4">
+                    <div className="transition-all duration-300 ease-out hover:scale-[1.03] mb-4 rounded-xl outline-none ring-0 focus:outline-none focus:ring-0">
                       <img
                         src={testimonial.image}
                         alt={testimonial.alt}
-                        className="w-[80%] h-auto object-contain rounded-xl shadow-md mx-auto"
+                        className="w-[80%] h-auto object-contain rounded-xl shadow-md mx-auto pointer-events-none"
                       />
                     </div>
                   </DialogTrigger>

@@ -115,7 +115,7 @@ const MethodologySection = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 1.1, ease: "easeOut" }}
             >
-              <Button variant="outline" size="lg">
+              <Button size="lg">
                 Conocer la metodología completa
               </Button>
             </motion.div>
