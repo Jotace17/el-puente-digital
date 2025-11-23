@@ -4,7 +4,7 @@ const Footer = () => {
   const links = {
     main: [
       { label: "Sobre nosotros", href: "#sobre-nosotros" },
-      { label: "Programas", href: "#programas" },
+      { label: "Metodología", href: "#metodologia" },
       { label: "Eventos", href: "#eventos" },
     ],
     legal: [

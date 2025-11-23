@@ -1,6 +1,11 @@
 import { Button } from "@/components/ui/button";
 
-const FinalCta = () => {
+interface FinalCtaProps {
+  showPrograms: boolean;
+  setShowPrograms: (value: boolean) => void;
+}
+
+const FinalCta = ({ showPrograms, setShowPrograms }: FinalCtaProps) => {
   return (
     <section id="contacto" className="py-16 md:py-24 bg-navy">
       <div className="max-w-4xl mx-auto px-4 text-center">
@@ -10,16 +15,34 @@ const FinalCta = () => {
         <p className="text-lg md:text-xl mb-8 text-navy-foreground/90 max-w-2xl mx-auto">
           Cuéntanos en qué etapa estás y te recomendamos el programa ideal para ti
         </p>
-        <Button 
-          size="lg" 
-          className="text-base px-8"
-          onClick={() =>
-            (window.location.href =
-              "https://ig.me/m/eldigitalbridge")
-            }
+
+        <div
+          className="
+            flex 
+            flex-col md:flex-row 
+            items-center justify-center
+            gap-4 mt-6
+          "
         >
-          Hablar con nosotros
-        </Button>
+          <Button
+            size="lg"
+            className="text-base px-8 w-full md:w-auto"
+            onClick={() =>
+              (window.location.href = "https://ig.me/m/eldigitalbridge")
+            }
+          >
+            Hablar con nosotros
+          </Button>
+
+          <Button
+            size="lg"
+            className="text-base px-8 w-full md:w-auto"
+            onClick={() => setShowPrograms(!showPrograms)}
+          >
+            {showPrograms ? "Ocultar programas" : "Ver más programas"}
+          </Button>
+        </div>
+
       </div>
     </section>
   );
