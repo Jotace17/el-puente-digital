@@ -59,7 +59,7 @@ const BlackFridayPopup = () => {
       <div
         className="
           relative w-full max-w-4xl 
-          h-[80vh] sm:h-[600px] 
+          h-[85vh] sm:h-[650px] 
           rounded-3xl overflow-hidden shadow-2xl 
           animate-[scale-in_0.4s_ease-out]
           flex flex-col
