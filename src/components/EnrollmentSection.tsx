@@ -16,9 +16,9 @@ const EnrollmentSection = () => {
   return (
     <section id="inscripcion" className="relative py-20 bg-navy overflow-hidden">
       {/* Animated Background Pattern */}
-      <div className="absolute inset-0 opacity-100 lg:opacity-50">
+      <div className="absolute inset-0 opacity-40 lg:opacity-20">
         <div 
-          className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 animate-pulse" 
+          className="absolute inset-0 bg-gradient-to-br from-primary/60 via-transparent to-accent/60 animate-pulse"
           style={{ animationDuration: '8s' }} 
         />
         <div className="hero-pattern" />
