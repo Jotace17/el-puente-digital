@@ -88,7 +88,7 @@ const BlackFridayPopup = () => {
         {/* Content */}
         <div className="relative h-full flex flex-col justify-end sm:pb-8">
           <div className="h-1/3 flex items-center p-8 md:p-12">
-            <div className="max-w-2xl w-full">
+            <div className="max-w-2xl w-full sm:pb-6">
               {/* Main Title */}
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-3 leading-tight">
                 Black Friday Mega Sale
@@ -104,18 +104,18 @@ const BlackFridayPopup = () => {
               {/* CTA Button */}
               <Button 
                 size="lg"
-                className="w-full md:w-auto min-w-[300px] bg-[#a6ff01] hover:bg-[#95e600] text-black font-bold text-lg py-6 px-12 sm:pb-6 rounded-xl transition-all shine-effect"
+                className="w-full md:w-auto min-w-[300px] bg-[#a6ff01] hover:bg-[#95e600] text-black font-bold text-lg py-6 px-12 rounded-xl transition-all shine-effect"
                 onClick={() =>
                 (window.location.href =
                   "https://shop.beacons.ai/katherinee_ugc/8b96a046-edae-4c3d-a36e-db66d661570e")
                 }
               >
-                Lo quiero ya!
+                ¡Lo quiero ya!
               </Button>
               
               {/* Footer Text */}
-              <p className="text-white/60 text-sm mt-6">
-                We respect your decisions. Privacy policy
+              <p className="text-white/60 text-sm mt-6 sm:pb-6" >
+                Respetamos tu decisión. Polítca de privacidad.
               </p>
             </div>
           </div>
