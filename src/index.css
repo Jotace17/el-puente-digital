@@ -143,23 +143,27 @@ All colors MUST be HSL.
   }
 
   .shine-effect::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 150%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.4),
-      rgba(255, 255, 255, 0.7),
-      rgba(255, 255, 255, 0.4),
-      transparent
-    );
-    animation: shine 5s ease-in-out infinite;
-    filter: blur(2px);
-  }
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 150%;
+  height: 100%;
+
+  /* SHINY Azul metálico */
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(120, 180, 255, 0.25),
+    rgba(160, 210, 255, 0.55),
+    rgba(120, 180, 255, 0.25),
+    transparent
+  );
+
+  animation: shine 5s ease-in-out infinite;
+  filter: blur(2px);
+}
+
 
 .hero-pattern {
   position: absolute;
@@ -179,8 +183,6 @@ All colors MUST be HSL.
   /* Faster movement */
   animation: pattern-move 25s linear infinite;
 }
-
-
 
   .perspective-1000 {
     perspective: 1000px;

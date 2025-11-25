@@ -9,9 +9,13 @@ const Hero = () => {
       className="relative min-h-screen flex items-center bg-navy pt-20 overflow-hidden"
     >
       {/* Background */}
-      <div className="absolute inset-0 opacity-40 lg:opacity-20">
+      <div className="absolute inset-0 opacity-60 lg:opacity-30">
         <div
-          className="absolute inset-0 bg-gradient-to-br from-primary/60 via-transparent to-accent/60 animate-pulse"
+          className="absolute inset-0 bg-gradient-to-br 
+                      from-[hsl(210_20%_85%/_0.4)] 
+                      via-transparent 
+                      to-[hsl(210_90%_70%/_0.4)]
+                      animate-pulse"
           style={{ animationDuration: "8s" }}
         />
         <div className="hero-pattern" />
