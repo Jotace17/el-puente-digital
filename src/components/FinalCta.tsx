@@ -41,7 +41,7 @@ const FinalCta = ({ showPrograms, setShowPrograms }: FinalCtaProps) => {
             size="lg"
             className="text-base px-8 w-full md:w-auto"
             onClick={() =>
-              (window.location.href = "https://ig.me/m/eldigitalbridge")
+              (window.location.href = "https://wa.me/13054392165?text=Hola,%20vengo%20desde%20tu%20sitio%20web")
             }
           >
             Hablar con nosotros
