@@ -5,7 +5,7 @@ import { Clock, BarChart } from "lucide-react";
 
 import cover_mujeres_de_impacto from "@/assets/covers/mujeres-de-impacto.jpg";
 import cover_ugc from "@/assets/covers/ugc.png";
-import cover_edb from "@/assets/covers/edb.png";
+import cover_edb from "@/assets/covers/edb.jpg";
 
 
 const ProgramsSection = () => {
