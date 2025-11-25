@@ -134,7 +134,7 @@ All colors MUST be HSL.
       background-position: 0 0;
     }
     100% {
-      background-position: 50px 50px;
+      background-position: 600px 600px;
     }
   }
 
@@ -167,27 +167,17 @@ All colors MUST be HSL.
 
   /* Patrón estilo metal/plata + azul eléctrico */
   background-image:
-    linear-gradient(30deg, hsl(210 15% 85% / 0.10) 12%, transparent 12.5%, transparent 87%, hsl(210 15% 85% / 0.10) 87.5%, hsl(210 15% 85% / 0.10)),
-    linear-gradient(150deg, hsl(210 15% 85% / 0.10) 12%, transparent 12.5%, transparent 87%, hsl(210 15% 85% / 0.10) 87.5%, hsl(210 15% 85% / 0.10)),
-    linear-gradient(30deg, hsl(210 90% 65% / 0.05) 12%, transparent 12.5%, transparent 87%, hsl(210 90% 65% / 0.05) 87.5%, hsl(210 90% 65% / 0.05)),
-    linear-gradient(150deg, hsl(210 90% 65% / 0.05) 12%, transparent 12.5%, transparent 87%, hsl(210 90% 65% / 0.05) 87.5%, hsl(210 90% 65% / 0.05));
+    linear-gradient(30deg, hsl(210 15% 85% / 0.15) 10%, transparent 10.5%, transparent 89.5%, hsl(210 15% 85% / 0.15) 90%, hsl(210 15% 85% / 0.15)),
+    linear-gradient(150deg, hsl(210 15% 85% / 0.15) 10%, transparent 10.5%, transparent 89.5%, hsl(210 15% 85% / 0.15) 90%, hsl(210 15% 85% / 0.15)),
+    linear-gradient(30deg, hsl(210 90% 65% / 0.08) 10%, transparent 10.5%, transparent 89.5%, hsl(210 90% 65% / 0.08) 90%, hsl(210 90% 65% / 0.08)),
+    linear-gradient(150deg, hsl(210 90% 65% / 0.08) 10%, transparent 10.5%, transparent 89.5%, hsl(210 90% 65% / 0.08) 90%, hsl(210 90% 65% / 0.08));
 
-  background-size: 50px 50px;
-  background-position: 0 0, 25px 0, 25px 25px, 0 25px;
-  animation: pattern-move 20s linear infinite;
-}
+  /* Smaller tiles = denser pattern */
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 0, 16px 16px, 0 16px;
 
-/* Opcional: brillo suave como luz sobre metal */
-.hero-pattern::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at 70% 30%,
-    hsla(210, 80%, 75%, 0.15),
-    transparent 70%
-  );
-  pointer-events: none;
+  /* Faster movement */
+  animation: pattern-move 25s linear infinite;
 }
 
 
