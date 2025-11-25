@@ -134,7 +134,7 @@ All colors MUST be HSL.
       background-position: 0 0;
     }
     100% {
-      background-position: 800px 800px;
+      background-position: 1800px 1800px;
     }
   }
 
@@ -202,7 +202,7 @@ All colors MUST be HSL.
     64px 64px,
     0 64px;
 
-  animation: pattern-move 35s linear infinite;
+  animation: pattern-move 125s linear infinite;
 }
 
 
